@@ -25,7 +25,7 @@ const ThreeJSBackground = () => {
     const starGeometry = new THREE.BufferGeometry();
     const starMaterial = new THREE.PointsMaterial({
       color: 0xffffff,
-      size: 0.009,
+      size: 0.001,
     });
 
     // Generate random star positions that fill the screen vertically
@@ -57,7 +57,7 @@ const ThreeJSBackground = () => {
       starField.geometry.attributes.position.array.forEach(
         (position, index) => {
           if (index % 3 === 2) {
-            position -= 0.0;
+            position -= 0.01;
             if (position < 0) {
               position = 5;
             }
