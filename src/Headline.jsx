@@ -8,6 +8,7 @@ const style = {
     margin: "5%"
 }
 
+
 const image_style = {
     height: "20%",
     width: "20%"
