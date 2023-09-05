@@ -2,6 +2,6 @@ import React from "react";
 
 function Foot(){
     const yyear = new Date().getFullYear();
-    return <footer> <p>copyright@{yyear} </p></footer>
+    return <footer></footer>
 }
 export default Foot;

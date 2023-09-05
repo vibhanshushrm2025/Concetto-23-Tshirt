@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
-import Appp from "./components/appp";
+
 import Form from "./components/form";
 import Head from './components/Head'
 
@@ -105,15 +105,17 @@ const ThreeJSBackground = () => {
           position: "absolute",
           top: "50%",
           left: "50%",
+       
           transform: "translate(-50%, -50%)",
           zIndex: 1,
           backgroundColor: "rgba(0, 0, 0, 0.5)", // Add a semi-transparent background
           color: "white", // Set text color to white,
           width: "100%",
         }}
+        className="mt-3"
       >
         <Head />
-        <Appp />
+         
         <Form />
       </div>
     </div>
