@@ -89,7 +89,7 @@ const ThreeJSBackground = () => {
   }, []);
 
   return (
-    <div
+    <div 
       ref={containerRef}
       style={{
         position: "relative",
@@ -100,7 +100,7 @@ const ThreeJSBackground = () => {
         overflow: "hidden",
       }}
     >
-      <div
+      <div className="parallax-content mt-3"
         style={{
           position: "absolute",
           top: "50%",
@@ -112,7 +112,6 @@ const ThreeJSBackground = () => {
           color: "white", // Set text color to white,
           width: "100%",
         }}
-        className="mt-3"
       >
         {/* <Head /> */}
          
