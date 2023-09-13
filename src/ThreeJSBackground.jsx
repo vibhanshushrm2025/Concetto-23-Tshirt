@@ -114,7 +114,7 @@ const ThreeJSBackground = () => {
         }}
         className="mt-3"
       >
-        <Head />
+        {/* <Head /> */}
          
         <Form />
       </div>

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { FormControlLabel } from '@mui/material'
 import FormLabel from '@mui/material/FormLabel';
  
-const options = ['S', 'M', 'L','XL'];
+const options = ['XS','S', 'M', 'L','XL','2XL','3XL','4XL'];
 
 export default function App() {
   const [selected, setSelected] = useState(null);
