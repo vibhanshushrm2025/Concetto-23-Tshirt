@@ -16,9 +16,9 @@ export default function App() {
   }
  
   return (
-    <div>
-       <FormControl className='mx-4 text-light'>
-        <FormLabel className='text-light'  >Size</FormLabel>
+    <span>
+       <FormControl className=' text-light'>
+        <FormLabel className='text-light float-left'  >Size</FormLabel>
         <RadioGroup row
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="M"
@@ -28,13 +28,10 @@ export default function App() {
        
           <FormControlLabel  className='text-light' key={i} value={o} control={<Radio className='text-light' />} checked={i === selected}
           onChange={() => onChange(i)}  label={o} />
-          
-       
-       
       ))}
-      <br />
+      {/* <br /> */}
       </RadioGroup>
       </FormControl>
-    </div>
+    </span>
   );
 }

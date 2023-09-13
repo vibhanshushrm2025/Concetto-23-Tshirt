@@ -20,15 +20,22 @@ import one from '../images/1.jpg';
 import two from '../images/2.jpg';
 import three from '../images/3.jpg';
 import four from '../images/4.jpg';
+import five from '../images/5.jpg';
+import six from '../images/6.jpeg';
+
 const images = [
-  { url: one},
+  { url: one },
   { url: two },
   { url: three },
   { url: four },
+  { url: six },
+  { url: five }
 ];
+
 const FormContainer = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
 }));
+
 const InputDefault = styled(TextField)({
   '& label.Mui-focused': {
     color: '#2F3C7E',
@@ -62,49 +69,82 @@ const InputDefault = styled(TextField)({
   
 });
 
+const flexContainerStyle = {
+  display: 'flex',
+ 
+  justifyContent: 'center',
+  flexWrap: 'wrap', // Allow content to wrap to the next line
+};
+
+const responsiveColumn = {
+  flexBasis: '100%', // Make each item take full width in a column
+  padding: '5px', // Adjust spacing as needed
+};
+
 export default function App() {
   return (
-    <Container>
-    <img src={image} className="my-1" height={70}  alt="404"/>
-      <Row>
-        <Col>
-          <div className="note">
-            <SimpleImageSlider
-              width={650}
-              height={500}
-              images={images}
-              showBullets={true}
-              showNavs={true}
-            />
-          </div>
-        </Col>
-        <Col xs={12} sm={6} className="text-light">
-        <Typography variant="h5" className="mb-3" align="center">
+    <div id= "canvas_container">
+    <div className='m-3'id= "canvas_box">
+      <img src={image} className="my-1" height={70} alt="404" />
+      <div style={flexContainerStyle}>
+        <div className="note mt-5">
+          <SimpleImageSlider
+            width={650}
+            height={500}
+            images={images}
+            showBullets={true}
+            showNavs={true}
+          />
+        </div>
+        <div className="text-light">
+          <Typography variant="h5" className="mb-3" align="center">
             Enter Your Information
           </Typography>
-          <form>
-            <div className='m-3'><InputDefault label="Name"  fullWidth /></div>  
-            <div className='m-3'><InputDefault label="Admission Number" fullWidth /></div>  
-            <div className='m-3'><InputDefault label="Email" fullWidth /></div>  
-            <div className='m-3'><InputDefault label="Phone Number" fullWidth /></div>  
-            <div className='m-3'><InputDefault label="Branch" fullWidth /></div>  
-            <div className='m-3'><InputDefault label="Hostel"/><span>  </span><InputDefault label="Room No"/></div>
-            <div className='m-3'><InputDefault label="Transaction id" fullWidth /></div>
-            <span><Uu /></span>
-            <Button type='submit' className='m-3' variant="outlined">Place order</Button>
-            <label htmlFor="upload-photo">
-            <input
-     style={{ display: 'none' }}
-    id="upload-photo"
-    name="upload-photo"
-    type="file"/>
-  <Button className='m-3' variant="contained" component="span">
-    Upload button
-  </Button>
-</label>
-          </form>
-        </Col>
-      </Row>
-    </Container>
+          <Form style={{ width: '100%' }} className='m-3'> 
+            <div style={responsiveColumn}>
+              <InputDefault label="Name" fullWidth />
+            </div>
+            <div style={responsiveColumn}>
+              <InputDefault label="Admission Number" fullWidth />
+            </div>
+            <div style={responsiveColumn}>
+              <InputDefault label="Email" fullWidth />
+            </div>
+            <div style={responsiveColumn}>
+              <InputDefault label="Phone Number" fullWidth />
+            </div>
+            <div style={responsiveColumn}>
+              <InputDefault label="Branch" fullWidth />
+            </div>
+            <div style={responsiveColumn} className='hostel'  fullWidth>
+              <InputDefault label="Hostel" className='w-50'/>
+          
+              <InputDefault label="Room No" className='w-49' />
+            </div>
+            <div style={responsiveColumn}>
+              <InputDefault label="Transaction id" fullWidth />
+            </div>
+            {/* <span>Size</span> */}
+            {/* <br/> */}
+              <Uu />
+            <div style={responsiveColumn}>
+            
+              <label htmlFor="upload-photo">
+                <input
+                  style={{ display: 'none' }}
+                  id="upload-photo"
+                  name="upload-photo"
+                  type="file" />
+                <Button className='m-3' variant="outlined" component="span">
+                  Upload button
+                </Button>
+              </label>
+              <Button type='submit' className='m-3' variant="contained">Place order</Button>
+            </div>
+          </Form>
+        </div>
+      </div>
+    </div>
+    </div>
   );
 }
