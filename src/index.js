@@ -7,6 +7,7 @@ ReactDOM.render(
     
     <ThreeJSBackground />
     <Foot />
+
     
   </div>,
   document.getElementById("root")
