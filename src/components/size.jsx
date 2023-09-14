@@ -8,9 +8,9 @@ import FormLabel from '@mui/material/FormLabel';
  
 const options = ['XS','S', 'M', 'L','XL','2XL','3XL','4XL'];
 
-export default function App() {
+export default function App(props) {
   const [selected, setSelected] = useState(null);
-
+  const {size, setSize} = props;
   function onChange(i) {
     setSelected((prev) => (i === prev ? null : i));
   }
@@ -23,6 +23,7 @@ export default function App() {
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="M"
           name="radio-buttons-group"
+          onChange={(e)=>{setSize(e.target.value);console.log(size)}} aria-required
         >
       {options.map((o, i) => (
        
