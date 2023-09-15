@@ -92,33 +92,43 @@ export default function App() {
   const server = "https://concetto-23-nuc1.onrender.com/api";
   const submitHandler = async (e) => {
     e.preventDefault();
+
+
+    const data = new FormData(e.currentTarget);
+      const resp = new FormData();
+
+      const response = {
+        name: data.get("name"),
+        image: url,
+        orderID: data.get("transId"),
+        admissionNumber: data.get("admNo"),
+        mobileNumber: data.get("mobNo"),
+        branch: data.get("branch"),
+        tshirtSize: data.get("size"),
+        transactionID: data.get("transId"),
+        hostel: data.get("hostel"),
+        roomNumber: data.get("room"),
+        place: data.get("place"),
+      };
+       
+      for(let prop in response){
+        resp.append(prop, response[prop]);
+      }
+
     const formData = new FormData();
     formData.append("image", url);
     try {
       const usr = await axios.post(
         `${server}/purchase`,
-        formData,
-        {
-          orderID: transId,
-          name: name,
-          admissionNumber: admNo,
-          mobileNumber: mobNo,
-          branch: branch,
-          tshirtSize: size,
-          transactionID: transId,
-          hostel: hostel,
-          roomNumber: room,
-        },
-        {
+        resp,{
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
-          withCredentials: true,
         }
       );
       console.log(usr);
     } catch (error) {
-      console.log("error",error);
+      console.log("error", error);
     }
   };
   const handleImageChange = (event) => {
