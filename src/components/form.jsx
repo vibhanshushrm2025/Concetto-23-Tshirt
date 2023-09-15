@@ -128,7 +128,7 @@ export default function App() {
       );
       console.log(usr);
     } catch (error) {
-      console.log("error", error);
+      console.log("error2", error);
     }
   };
   const handleImageChange = (event) => {
